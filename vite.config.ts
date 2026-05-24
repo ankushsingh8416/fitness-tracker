@@ -1,16 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
   plugins: [
-    cloudflare({ viteEnvironment: { name: "ssr" } }),
-    tanstackStart({
-      server: { entry: "server" },
-    }),
+    tanstackRouter({ autoCodeSplitting: true, target: "react" }),
     react(),
     tailwindcss(),
     tsconfigPaths(),
@@ -19,13 +15,14 @@ export default defineConfig({
     dedupe: ["react", "react-dom", "@tanstack/react-router"],
   },
   build: {
+    outDir: "dist",
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ["react", "react-dom"],
+          "react-vendor": ["react", "react-dom"],
+          router: ["@tanstack/react-router"],
           charts: ["recharts"],
           motion: ["framer-motion"],
-          router: ["@tanstack/react-router"],
         },
       },
     },

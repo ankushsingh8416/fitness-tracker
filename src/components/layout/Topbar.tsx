@@ -34,9 +34,20 @@ export function Topbar() {
     .toUpperCase();
 
   return (
-    <header className="sticky top-0 z-20 glass border-b border-border">
-      <div className="h-16 px-4 sm:px-6 lg:px-8 flex items-center gap-3">
-        {/* Desktop search */}
+    <header className="fixed top-0 left-0 right-0 z-40 glass border-b border-border">
+      <div className="h-16 px-4 sm:px-6 lg:px-8 flex items-center gap-4">
+        {/* Brand — visible on all screen sizes */}
+        <div className="flex items-center gap-2.5 shrink-0">
+          <div className="h-8 w-8 rounded-xl bg-primary grid place-items-center">
+            <Flame className="h-4 w-4 text-primary-foreground" strokeWidth={2.5} />
+          </div>
+          <span className="text-sm font-bold tracking-tight">FIT-HO</span>
+        </div>
+
+        {/* Divider — desktop only */}
+        <div className="hidden lg:block h-5 w-px bg-border" />
+
+        {/* Search — desktop only */}
         <div className="hidden lg:flex relative flex-1 max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
           <input
@@ -47,15 +58,7 @@ export function Topbar() {
           />
         </div>
 
-        {/* Mobile brand */}
-        <div className="lg:hidden flex items-center gap-2.5">
-          <div className="h-8 w-8 rounded-xl bg-primary grid place-items-center">
-            <Flame className="h-4 w-4 text-primary-foreground" strokeWidth={2.5} />
-          </div>
-          <span className="text-sm font-semibold tracking-tight">Pulse Calendar</span>
-        </div>
-
-        <div className="flex-1 lg:hidden" />
+        <div className="flex-1" />
 
         {/* Controls */}
         <div className="flex items-center gap-1.5">

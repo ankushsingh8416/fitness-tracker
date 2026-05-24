@@ -37,7 +37,7 @@ const DEFAULT_STATE: State = {
     { id: "r2", type: "workout", label: "Evening workout", time: "18:30", enabled: true, days: [1,3,5] },
     { id: "r3", type: "sleep", label: "Wind down", time: "22:30", enabled: true, days: [0,1,2,3,4,5,6] },
   ],
-  profile: { name: "Alex Morgan", heightCm: 178, weightKg: 72, age: 28, avatarColor: "#A7F3C2" },
+  profile: { name: "Kajal Morgan", heightCm: 178, weightKg: 72, age: 28, avatarColor: "#A7F3C2" },
   theme: "dark",
 };
 

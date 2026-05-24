@@ -32,19 +32,7 @@ export function Sidebar() {
   const path = useRouterState({ select: (s) => s.location.pathname });
 
   return (
-    <aside className="hidden lg:flex fixed inset-y-0 left-0 w-65 z-30 flex-col border-r border-border bg-sidebar">
-      {/* Brand */}
-      <div className="flex items-center gap-3 px-5 h-16 border-b border-border/60">
-        <div className="relative h-9 w-9 rounded-xl bg-primary grid place-items-center shrink-0">
-          <div className="absolute inset-0 rounded-xl bg-primary blur-lg opacity-50" />
-          <Flame className="relative h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
-        </div>
-        <div className="leading-tight min-w-0">
-          <div className="text-[15px] font-semibold tracking-tight truncate">Pulse Calendar</div>
-          <div className="text-[11px] text-muted-foreground -mt-0.5">Fitness & Wellness</div>
-        </div>
-      </div>
-
+    <aside className="hidden lg:flex fixed top-16 left-0 bottom-0 w-65 z-30 flex-col border-r border-border bg-sidebar">
       {/* Nav */}
       <nav className="flex-1 px-3 py-3 space-y-0.5 overflow-y-auto">
         <p className="px-3 pt-1 pb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
@@ -68,7 +56,7 @@ export function Sidebar() {
                 />
               )}
               <Icon
-                className={`relative h-[18px] w-[18px] shrink-0 transition-colors ${
+                className={`relative h-4.5 w-4.5 shrink-0 transition-colors ${
                   active
                     ? "text-primary"
                     : "text-muted-foreground group-hover:text-foreground"
@@ -89,7 +77,7 @@ export function Sidebar() {
 
       {/* Streak card */}
       <div className="p-4">
-        <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20">
+        <div className="p-4 rounded-2xl bg-linear-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20">
           <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-2">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-soft" />
             Active streak

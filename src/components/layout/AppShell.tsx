@@ -6,9 +6,14 @@ import { MobileNav } from "./MobileNav";
 export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background">
+      {/* Full-width header — fixed across entire viewport */}
+      <Topbar />
+
+      {/* Sidebar — starts below the header */}
       <Sidebar />
-      <div className="lg:pl-65 flex flex-col min-h-screen">
-        <Topbar />
+
+      {/* Content column — offset right for sidebar, down for header */}
+      <div className="lg:pl-65 pt-16 flex flex-col min-h-screen">
         <main className="flex-1 px-4 sm:px-6 lg:px-8 pt-6 pb-28 lg:pb-8">
           <div className="max-w-7xl mx-auto">{children}</div>
         </main>
@@ -23,6 +28,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           </p>
         </footer>
       </div>
+
       <MobileNav />
     </div>
   );

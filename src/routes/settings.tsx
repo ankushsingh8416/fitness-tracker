@@ -3,6 +3,6 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Settings } from "@/components/settings/Settings";
 
 export const Route = createFileRoute("/settings")({
-  head: () => ({ meta: [{ title: "Settings — Pulse" }, { name: "description", content: "Profile and reminders." }] }),
+  head: () => ({ meta: [{ title: "Settings — FIT-HO" }, { name: "description", content: "Profile and reminders." }] }),
   component: () => (<AppShell><Settings /></AppShell>),
 });

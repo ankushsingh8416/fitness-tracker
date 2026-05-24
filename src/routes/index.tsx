@@ -5,7 +5,7 @@ import { Dashboard } from "@/components/dashboard/Dashboard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pulse — Fitness & Wellness Dashboard" },
+      { title: "FIT-HO — Fitness & Wellness Dashboard" },
       { name: "description", content: "Track workouts, recovery, and goals in one premium wellness dashboard." },
     ],
   }),
